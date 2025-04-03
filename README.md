@@ -17,19 +17,19 @@ Na primeira aula, vamos aprender como utilizar funções para adicionar produtos
 
 **Explicação:** 
 
-1. <Função adicionar():
+1. Função adicionar():
 
 A função é chamada quando o usuário interage com o formulário (por exemplo, clicando em um botão de "Adicionar").
 
-2. <Captura do Nome do Produto:
+2. Captura do Nome do Produto:
 
 Usamos o document.getElementById('produto') para capturar o valor inserido no campo de nome do produto. Esse método retorna o elemento HTML com o id "produto", que é onde o usuário digita o nome do produto.
 
-3. <Captura da Quantidade:
+3. Captura da Quantidade:
 
 Da mesma forma, utilizamos document.getElementById('quantidade') para capturar o valor inserido no campo de quantidade. Esse método retorna o valor do campo de input com o id "quantidade".
 
-4. <Armazenamento nas Variáveis:
+4. Armazenamento nas Variáveis:
 
 As variáveis nomeProduto e quantidade armazenam os valores dos campos do formulário. A partir daí, podemos manipular esses dados conforme necessário (por exemplo, armazenando em um array ou exibindo em outra parte da interface).
 
@@ -61,31 +61,31 @@ Na segunda aula, vamos aprender como calcular o valor total dos produtos com bas
 
 **Explicação:**
 
-1. <Captura do Produto:
+1. Captura do Produto:
 
 * let produto = document.getElementById('produto').value;
 
 * Usamos document.getElementById('produto').value para pegar o valor completo do campo de input onde o usuário escolhe o produto. Esse valor geralmente será uma string que contém o nome do produto e o seu preço, separados por um caractere específico (por exemplo, "Produto-X- R$20").
 
-2. <Obtendo o Nome do Produto:
+2. Obtendo o Nome do Produto:
 
 * let nomeProduto = produto.split('-')[0];
 
 * Usamos o método .split('-') para separar a string em um array, usando o hífen ('-') como delimitador. O primeiro item do array ([0]) será o nome do produto. Assim, obtemos apenas o nome do produto, sem o preço.
 
-3. <Obtendo o Valor Unitário:
+3. Obtendo o Valor Unitário:
 
 * let valorUnitario = produto.split('R$')[1];
 
 * Da mesma forma, utilizamos o método .split('R$') para dividir a string e pegar o valor após o "R$". O segundo item do array ([1]) será o valor unitário do produto, ou seja, o preço sem o símbolo de "R$".
 
-4. <Captura da Quantidade:
+4. Captura da Quantidade:
 
 * let quantidade = document.getElementById('quantidade');
 
 * Aqui, estamos pegando o valor inserido pelo usuário no campo de quantidade. O campo de quantidade é onde o usuário indica quantos itens do produto ele deseja.
 
-5. <Cálculo do Preço Total:
+5. Cálculo do Preço Total:
 
 * let preco = quantidade.value * valorUnitario;
 
@@ -117,25 +117,25 @@ Na terceira aula, focamos em como adicionar os produtos ao carrinho e exibir o s
 
 **Explicação:**
 
-1. <Captura de Quantidade:
+1. Captura de Quantidade:
 
 * let quantidade = document.getElementById('quantidade').value;
 
 * A quantidade do produto inserida pelo usuário é capturada a partir do campo de entrada com id quantidade.
 
-2. <Cálculo do Preço:
+2. Cálculo do Preço:
 
 * let preco = quantidade * valorUnitario;
 
 * O preço total do produto é calculado multiplicando a quantidade inserida pelo valor unitário do produto. Isso nos dá o subtotal para aquele item específico.
 
-3. <Captura da Lista de Produtos:
+3. Captura da Lista de Produtos:
 
 * let listaProdutos = document.getElementById('lista-produtos');
 
 * Aqui, estamos selecionando o elemento HTML onde os produtos serão adicionados ao carrinho. Este elemento, uma <div> ou <section>, serve como contêiner para os itens que o usuário adicionar.
 
-4. <Adicionando o Produto ao Carrinho:
+4. Adicionando o Produto ao Carrinho:
 
 * listaProdutos.innerHTML = listaProdutos.innerHTML + <section class="carrinho__produtos__produto"> <span class="texto-azul">${quantidade}</span> ${nomeProduto} <span class="texto-azul">${preco}</span> </section>;
 
@@ -195,19 +195,19 @@ Na quarta aula, implementamos funcionalidades adicionais para manter o controle 
 
 **Explicação:**
 
-1. <Definição da Variável valorTotal:
+1. Definição da Variável valorTotal:
 
 * let valorTotal;
 
 * A variável valorTotal é criada para armazenar o valor total acumulado de todos os produtos adicionados ao carrinho. Ela será atualizada a cada vez que um produto for adicionado.
 
-2. <Chamada da Função limpar():
+2. Chamada da Função limpar():
 
 * limpar();
 
 * Antes de começar a adicionar itens ao carrinho, chamamos a função limpar() para garantir que o valor total esteja zerado e que o carrinho não contenha nenhum item na primeira execução. Isso ajuda a inicializar o estado do carrinho sempre que a página for carregada.
 
-3. <Atualizando o Valor Total:
+3. Atualizando o Valor Total:
 
 * valorTotal = valorTotal + preco;
 
@@ -221,13 +221,13 @@ Na quarta aula, implementamos funcionalidades adicionais para manter o controle 
 
 * Atualizamos o conteúdo textual do elemento total para mostrar o valor total acumulado, formatado como moeda (R$). A cada novo item adicionado, o valor total será recalculado e exibido.
 
-4. <Limpando o Campo de Quantidade:
+4. Limpando o Campo de Quantidade:
 
 * document.getElementById('quantidade').value = 0;
 
 * Após a adição do produto, a quantidade é resetada para 0. Isso garante que, ao adicionar outro produto, o campo de quantidade esteja limpo e pronto para receber um novo valor.
 
-5. <Função limpar():
+5. Função limpar():
 
 * function limpar() { ... }
 
